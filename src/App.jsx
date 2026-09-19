@@ -1,0 +1,29 @@
+import { Routes, Route } from "react-router-dom";
+import NavBar from "./components/layout/NavBar";
+import Footer from "./components/layout/Footer";
+import HomePage from "./pages/HomePage";
+import AboutPage from "./pages/AboutPage";
+import Services from "./pages/Services";
+import ServiceDetail from "./pages/ServiceDetail";
+import useScrollToHash from "./lib/useScrollToHash";
+
+export default function App() {
+  useScrollToHash();
+
+  return (
+    <div className="min-h-screen bg-[#FBF8F3] font-sans antialiased">
+      <NavBar />
+      <main>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/services/:slug" element={<ServiceDetail />} />
+          <Route path="/contact" element={<HomePage />} />
+          <Route path="*" element={<HomePage />} />
+        </Routes>
+      </main>
+      <Footer />
+    </div>
+  );
+}
