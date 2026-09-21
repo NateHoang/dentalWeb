@@ -70,9 +70,11 @@ export default function NavBar() {
             href="/"
             onClick={(e) => {
               e.preventDefault();
-              if (pathname === "/") {
+              if (pathname === "/" && !window.location.hash) {
+                // Already on home with no hash: scroll to top
                 window.scrollTo({ top: 0, behavior: "smooth" });
               } else {
+                // Different page or has hash: navigate to clean home
                 window.location.href = "/";
               }
               close();
@@ -105,7 +107,19 @@ export default function NavBar() {
               ) : (
                 <a
                   href={link.to}
-                  onClick={handleNavLinkClick}
+                  onClick={(e) => {
+                    if (link.label === "Home") {
+                      e.preventDefault();
+                      if (pathname === "/" && !window.location.hash) {
+                        window.scrollTo({ top: 0, behavior: "smooth" });
+                      } else {
+                        window.location.href = "/";
+                      }
+                      close();
+                    } else {
+                      handleNavLinkClick(e);
+                    }
+                  }}
                   className={`text-sm font-medium transition ${
                     pathname === link.to
                       ? "text-white"
@@ -121,8 +135,7 @@ export default function NavBar() {
 
         <div className="ml-auto hidden items-center gap-3 lg:flex">
           <a
-            href="/#request-appointment"
-            onClick={handleContactClick}
+            href="tel:+1916-876-6100"
             className="flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-semibold text-teal-800 transition hover:bg-teal-50"
           >
             <IconPhone size={16} />

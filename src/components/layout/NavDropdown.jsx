@@ -17,30 +17,32 @@ export default function NavDropdown({ link }) {
     closeTimer.current = setTimeout(() => setOpen(false), 140);
   };
 
-  const handleChildClick = (e, to) => {
-    const [path, hash] = to.split("#");
-    const currentPath = window.location.pathname;
+  const handleChildClick = (e, href) => {
+    // href example: "/about#experience" or "/services/cleaning-and-prevention"
+    if (!href) return;
+
+    const target = new URL(href, window.location.origin);
+    const targetPath = target.pathname;
+    const targetHash = target.hash;
+
+    e.preventDefault();
 
     // Same page
-    if (currentPath === path) {
-      e.preventDefault();
-
-      if (hash) {
+    if (window.location.pathname === targetPath) {
+      if (targetHash) {
         // Scroll to anchor
-        window.history.replaceState(null, "", `${path}#${hash}`);
-        setTimeout(() => {
-          const element = document.getElementById(hash);
-          if (element) {
-            element.scrollIntoView({ behavior: "smooth" });
-          }
-        }, 0);
+        window.history.replaceState(null, "", `${targetPath}${targetHash}`);
+        scrollToTarget(targetHash);
       } else {
         // No hash: scroll to top
         window.scrollTo({ top: 0, behavior: "smooth" });
       }
+      setOpen(false);
+      return;
     }
 
-    setOpen(false);
+    // Different page: navigate normally
+    window.location.href = `${targetPath}${targetHash}`;
   };
 
   useEffect(() => {
@@ -69,7 +71,13 @@ export default function NavDropdown({ link }) {
       <NavLink
         to={link.to}
         onFocus={openNow}
-        onClick={() => setOpen(false)}
+        onClick={(e) => {
+          if (window.location.pathname === link.to) {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          }
+          setOpen(false);
+        }}
         aria-haspopup="true"
         aria-expanded={open}
         className={({ isActive }) =>
