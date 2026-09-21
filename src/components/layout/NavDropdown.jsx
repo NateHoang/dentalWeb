@@ -17,19 +17,30 @@ export default function NavDropdown({ link }) {
     closeTimer.current = setTimeout(() => setOpen(false), 140);
   };
 
-  const handleChildClick = (to) => {
-    setOpen(false);
+  const handleChildClick = (e, to) => {
+    const [path, hash] = to.split("#");
+    const currentPath = window.location.pathname;
 
-    // If the link has a hash, scroll to it
-    if (to.includes("#")) {
-      const hash = to.split("#")[1];
-      setTimeout(() => {
-        const element = document.getElementById(hash);
-        if (element) {
-          element.scrollIntoView({ behavior: "smooth" });
-        }
-      }, 0);
+    // Same page
+    if (currentPath === path) {
+      e.preventDefault();
+
+      if (hash) {
+        // Scroll to anchor
+        window.history.replaceState(null, "", `${path}#${hash}`);
+        setTimeout(() => {
+          const element = document.getElementById(hash);
+          if (element) {
+            element.scrollIntoView({ behavior: "smooth" });
+          }
+        }, 0);
+      } else {
+        // No hash: scroll to top
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
     }
+
+    setOpen(false);
   };
 
   useEffect(() => {
@@ -87,14 +98,14 @@ export default function NavDropdown({ link }) {
         }`}
       >
         {link.children.map((child) => (
-          <Link
+          <a
             key={child.label}
-            to={child.to}
-            onClick={() => handleChildClick(child.to)}
+            href={child.to}
+            onClick={(e) => handleChildClick(e, child.to)}
             className="block rounded-xl px-4 py-2.5 text-sm font-medium text-teal-900 transition hover:bg-emerald-50 hover:text-teal-700"
           >
             {child.label}
-          </Link>
+          </a>
         ))}
       </div>
     </div>

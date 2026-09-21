@@ -150,8 +150,8 @@ export const SERVICES_CONTENT = [
       "Most single fillings are completed in one appointment. Numbness usually wears off within a few hours.",
   },
   {
-    slug: "crowns-bridges-and-veneers",
-    title: "Crowns, Bridges and Veneers",
+    slug: "crowns-bridges",
+    title: "Crowns and Bridges",
     blurb: "Rebuilding teeth that are too damaged for a simple filling.",
     intro:
       "When a tooth is cracked, heavily worn or has lost too much structure, a crown covers and protects what remains. A bridge replaces a missing tooth by anchoring to its neighbours. Veneers address the front surface of visible teeth.",

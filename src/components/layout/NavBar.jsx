@@ -14,13 +14,69 @@ export default function NavBar() {
     setAboutOpen(false);
   };
 
+  // Handle scroll for nav links (home, about, services, etc.)
+  const handleNavLinkClick = (e) => {
+    const href = e.currentTarget.getAttribute("href");
+    if (!href) return;
+
+    const [path, hash] = href.split("#");
+    const currentPath = pathname;
+
+    // If on the same page, prevent default and scroll
+    if (currentPath === path) {
+      e.preventDefault();
+      if (hash) {
+        // Scroll to anchor
+        window.history.replaceState(null, "", `${path}#${hash}`);
+        const el = document.getElementById(hash);
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      } else {
+        // No hash: scroll to top
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+      return;
+    }
+
+    // Different page: let it navigate normally
+  };
+
+  // Handle scroll-to-anchor for contact link
+  const handleContactClick = (e) => {
+    e.preventDefault();
+    const targetHash = "#request-appointment";
+
+    // If already on home page, just scroll
+    if (pathname === "/") {
+      window.history.replaceState(null, "", `/${targetHash}`);
+      const el = document.getElementById("request-appointment");
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+      close();
+      return;
+    }
+
+    // Different page: navigate
+    window.location.href = `/${targetHash}`;
+  };
+
   return (
     <header className="sticky top-0 z-50 px-4 pt-4">
       <nav className="mx-auto flex max-w-6xl items-center gap-4 rounded-full bg-teal-800 px-5 py-3 shadow-lg shadow-teal-900/20">
         <div className="flex items-center gap-3">
-          <Link
-            to="/"
-            onClick={close}
+          <a
+            href="/"
+            onClick={(e) => {
+              e.preventDefault();
+              if (pathname === "/") {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              } else {
+                window.location.href = "/";
+              }
+              close();
+            }}
             aria-label="Go to home page"
             className="flex h-10 w-10 items-center justify-center overflow-hidden rounded-full bg-white/15 transition hover:bg-white/25"
           >
@@ -29,7 +85,7 @@ export default function NavBar() {
               alt="Home"
               className="h-full w-full object-cover"
             />
-          </Link>
+          </a>
 
           <div className="flex flex-col leading-tight">
             <span className="text-base font-semibold tracking-tight text-white">
@@ -47,18 +103,17 @@ export default function NavBar() {
               {link.children ? (
                 <NavDropdown link={link} />
               ) : (
-                <NavLink
-                  to={link.to}
-                  className={({ isActive }) =>
-                    `text-sm font-medium transition ${
-                      isActive && pathname === link.to
-                        ? "text-white"
-                        : "text-teal-50 hover:text-white"
-                    }`
-                  }
+                <a
+                  href={link.to}
+                  onClick={handleNavLinkClick}
+                  className={`text-sm font-medium transition ${
+                    pathname === link.to
+                      ? "text-white"
+                      : "text-teal-50 hover:text-white"
+                  }`}
                 >
                   {link.label}
-                </NavLink>
+                </a>
               )}
             </li>
           ))}
@@ -66,18 +121,20 @@ export default function NavBar() {
 
         <div className="ml-auto hidden items-center gap-3 lg:flex">
           <a
-            href="tel:+10000000000"
+            href="/#request-appointment"
+            onClick={handleContactClick}
             className="flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-semibold text-teal-800 transition hover:bg-teal-50"
           >
             <IconPhone size={16} />
             Sacramento
           </a>
-          <Link
-            to="/#contact"
+          <a
+            href="/#request-appointment"
+            onClick={handleContactClick}
             className="rounded-full bg-emerald-200 px-5 py-2 text-sm font-semibold text-teal-900 transition hover:bg-emerald-100"
           >
             Request an Appointment
-          </Link>
+          </a>
         </div>
 
         <button
@@ -155,19 +212,20 @@ export default function NavBar() {
 
           <div className="mt-5 flex flex-col gap-3">
             <a
-              href="tel:+10000000000"
+              href="/#request-appointment"
+              onClick={handleContactClick}
               className="flex items-center justify-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-semibold text-teal-800"
             >
               <IconPhone size={16} />
               Sacramento
             </a>
-            <Link
-              to="/#contact"
-              onClick={close}
+            <a
+              href="/#request-appointment"
+              onClick={handleContactClick}
               className="rounded-full bg-emerald-200 px-5 py-2 text-center text-sm font-semibold text-teal-900"
             >
               Request an Appointment
-            </Link>
+            </a>
           </div>
         </div>
       )}

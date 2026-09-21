@@ -1,7 +1,7 @@
 import { SITE, FOOTER_LINKS, LEGAL_LINKS } from "../../data/site.js";
 import { IconFacebook, IconInstagram, IconLinkedIn } from "../icons/index.jsx";
 import Button from "../ui/Button.jsx";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function SocialLinks() {
   return (
@@ -60,15 +60,63 @@ function LegalBar() {
   );
 }
 
+function ContactLink({ to, children, isButton = false }) {
+  const navigate = useNavigate();
+
+  const handleContactClick = (e) => {
+    e.preventDefault();
+
+    // Extract path and hash from the link
+    const url = new URL(to, window.location.origin);
+    const targetPath = url.pathname;
+    const targetHash = url.hash;
+
+    // If already on /contact, scroll to the anchor
+    if (window.location.pathname === targetPath) {
+      const id = targetHash.replace("#", "");
+      const el = document.getElementById(id);
+      if (el) {
+        window.history.replaceState(null, "", `${targetPath}${targetHash}`);
+        el.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+      return;
+    }
+
+    // Navigate to the page with the hash
+    navigate(to);
+  };
+
+  if (isButton) {
+    return (
+      <button
+        onClick={handleContactClick}
+        className="inline-flex h-12 items-center justify-center rounded-full bg-white px-6 text-sm font-semibold text-teal-800 transition hover:bg-teal-50"
+      >
+        {children}
+      </button>
+    );
+  }
+
+  return (
+    <Link
+      to={to}
+      onClick={handleContactClick}
+      className="transition hover:text-white"
+    >
+      {children}
+    </Link>
+  );
+}
+
 export default function Footer() {
   return (
     <footer>
       <div className="bg-teal-800 px-4 py-14 text-white">
         <div className="mx-auto grid max-w-6xl gap-10 md:grid-cols-3 md:divide-x md:divide-white/15">
           <div className="md:pr-8">
-            <Button href="#contact" variant="white" size="lg">
+            <ContactLink to="/#request-appointment" isButton>
               Request an appointment
-            </Button>
+            </ContactLink>
             <p className="mt-4 text-sm text-teal-50/80">
               Start with a simple conversation.
             </p>
@@ -98,13 +146,10 @@ export default function Footer() {
                   label: "Patient Experience",
                   to: "/about#patient-experience",
                 },
-
-                { label: "Contact", to: "/#contact" },
+                { label: "Contact", to: "/#request-appointment" },
               ].map((l) => (
                 <li key={l.label}>
-                  <Link to={l.to} className="transition hover:text-white">
-                    {l.label}
-                  </Link>
+                  <ContactLink to={l.to}>{l.label}</ContactLink>
                 </li>
               ))}
             </ul>

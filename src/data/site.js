@@ -43,8 +43,8 @@ export const NAV_LINKS = [
         to: "/services/cleaning-and-prevention",
       },
       {
-        label: "Crowns, Bridges and Veneers",
-        to: "/services/crowns-bridges-and-veneers",
+        label: "Crowns and Bridges",
+        to: "/services/crowns-bridges",
       },
       { label: "Dental Fillings", to: "/services/dental-fillings" },
       { label: "Dental Implants", to: "/services/dental-implants" },
@@ -55,7 +55,7 @@ export const NAV_LINKS = [
       { label: "Exams and X-rays", to: "/services/exams-and-xrays" },
     ],
   },
-  { label: "Contact", to: "/#contact" },
+  { label: "Contact", to: "/#request-appointment" },
 ];
 
 export const FOOTER_LINKS = [
@@ -63,7 +63,7 @@ export const FOOTER_LINKS = [
   { label: "About", href: "#about" },
   { label: "Services", href: "#services" },
   { label: "Patient Experiences", href: "#reviews" },
-  { label: "Contact", href: "#contact" },
+  { label: "Contact", href: "#request-appointment" },
 ];
 
 export const LEGAL_LINKS = [

@@ -183,6 +183,8 @@ function AppointmentForm({ onSent }) {
   );
 }
 
+// RequestForm.jsx
+
 export default function RequestForm() {
   const [sent, setSent] = useState(false);
 
@@ -190,7 +192,12 @@ export default function RequestForm() {
     <section id="contact" className="bg-white px-4 py-20">
       <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-2">
         <ContactColumn />
-        <div className="rounded-3xl bg-teal-50/70 p-8 ring-1 ring-teal-900/5">
+
+        {/* ADD THIS ID */}
+        <div
+          id="request-appointment"
+          className="rounded-3xl bg-teal-50/70 p-8 ring-1 ring-teal-900/5"
+        >
           {sent ? (
             <SuccessState onReset={() => setSent(false)} />
           ) : (
