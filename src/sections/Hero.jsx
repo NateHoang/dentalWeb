@@ -1,6 +1,7 @@
 import { HERO_ASSURANCES } from "../data/site.js";
 import { ICONS, IconTooth } from "../components/icons/index.jsx";
 import Button from "../components/ui/Button.jsx";
+import photo from "../assets/me.jpg";
 
 function AssuranceStrip() {
   return (
@@ -25,9 +26,7 @@ function HeroPortrait() {
     <div className="relative">
       <div className="absolute -right-4 -top-4 hidden h-full w-full rounded-[2.5rem] bg-emerald-200/50 lg:block" />
       <div className="relative aspect-[4/5] overflow-hidden rounded-[2.5rem] bg-teal-100">
-        {/* Replace with your own photo:
-            import photo from "../assets/me.jpg";
-            <img src={photo} alt="" className="h-full w-full object-cover" /> */}
+        <img src={photo} alt="" className="h-full w-full object-cover" />
         <div className="flex h-full w-full flex-col items-center justify-center gap-3 text-teal-700">
           <IconTooth size={56} />
           <p className="px-8 text-center text-sm">Add your photo here</p>

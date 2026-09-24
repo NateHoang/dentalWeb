@@ -1,4 +1,5 @@
 import { IconTooth } from "../../components/ui/Icons";
+import photo from "../../assets/me.jpg";
 
 export default function MeetNathan() {
   return (
@@ -7,11 +8,11 @@ export default function MeetNathan() {
         <div className="relative">
           <div className="absolute -left-4 -top-4 hidden h-full w-full rounded-[2.5rem] bg-emerald-200/50 lg:block" />
           <div className="relative aspect-[4/5] overflow-hidden rounded-[2.5rem] bg-teal-100">
-            {/* Replace with your photo: import me from "../../assets/me.jpg" */}
-            <div className="flex h-full w-full flex-col items-center justify-center gap-3 text-teal-700">
-              <IconTooth size={56} />
-              <p className="px-8 text-center text-sm">Add your photo here</p>
-            </div>
+            <img
+              src={photo}
+              alt="Dr. Hoang"
+              className="h-full w-full object-cover"
+            />
           </div>
         </div>
 

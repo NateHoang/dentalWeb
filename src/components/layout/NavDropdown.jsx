@@ -18,31 +18,26 @@ export default function NavDropdown({ link }) {
   };
 
   const handleChildClick = (e, href) => {
-    // href example: "/about#experience" or "/services/cleaning-and-prevention"
-    if (!href) return;
+    const [path, hash] = href.split("#");
+    const samePage = window.location.pathname === path;
 
-    const target = new URL(href, window.location.origin);
-    const targetPath = target.pathname;
-    const targetHash = target.hash;
+    if (samePage) {
+      e.preventDefault();
 
-    e.preventDefault();
+      if (hash) {
+        window.history.replaceState(null, "", `${path}#${hash}`);
 
-    // Same page
-    if (window.location.pathname === targetPath) {
-      if (targetHash) {
-        // Scroll to anchor
-        window.history.replaceState(null, "", `${targetPath}${targetHash}`);
-        scrollToTarget(targetHash);
+        const el = document.getElementById(hash);
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
       } else {
-        // No hash: scroll to top
         window.scrollTo({ top: 0, behavior: "smooth" });
       }
+
       setOpen(false);
       return;
     }
-
-    // Different page: navigate normally
-    window.location.href = `${targetPath}${targetHash}`;
   };
 
   useEffect(() => {
@@ -95,7 +90,6 @@ export default function NavDropdown({ link }) {
         />
       </NavLink>
 
-      {/* invisible bridge so the menu survives the gap under the navbar */}
       <div className="absolute left-0 top-full h-4 w-full" />
 
       <div
