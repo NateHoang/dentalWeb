@@ -20,32 +20,32 @@ export const SERVICES_CONTENT = [
       items: [
         {
           title: "Brush with Fluoride Toothpaste",
-          icon: "/tips/icons/brush.png",
+          icon: "/tips/cleaning/brush.png",
           text: "Use a fluoride toothpaste to help protect your teeth from decay and strengthen your enamel. Brushing twice a day ensures that food particles and plaque are removed, keeping your teeth clean and healthy. Try to brush 30 minutes after eating to prevent tooth damage.",
         },
         {
           title: "Use a Soft-Bristled Toothbrush After Each Meal",
-          icon: "/tips/icons/soft-brush.png",
+          icon: "/tips/cleaning/soft-brush.png",
           text: "A soft-bristled toothbrush is gentle on your gums and effective in cleaning your teeth. Brushing after meals helps prevent plaque buildup and reduces the risk of cavities.",
         },
         {
           title: "Floss Daily Before Bedtime",
-          icon: "/tips/icons/floss.png",
+          icon: "/tips/cleaning/floss.png",
           text: "Flossing is essential for removing plaque and food particles from between your teeth and along the gumline, where a toothbrush might not reach. Flossing before bedtime ensures that your teeth are clean and free from debris overnight.",
         },
         {
           title: "Use an Oral Rinse After Flossing",
-          icon: "/tips/icons/rinse.png",
+          icon: "/tips/cleaning/rinse.png",
           text: "An oral rinse can help reduce bacteria, freshen your breath, and provide additional protection against plaque buildup. Use it after flossing to enhance your oral hygiene routine and support overall dental health.",
         },
         {
           title: "Limit Sugary Drinks and Snacking",
-          icon: "/tips/icons/sugar.png",
+          icon: "/tips/cleaning/sugar.png",
           text: "Frequent sugar exposure feeds the bacteria that cause decay. Cutting down on how often you snack matters more than how much you eat at one sitting. More frequent snacking and drinking sugary drinks increases the risk of cavities, so try to limit these habits and opt for healthier alternatives.",
         },
         {
           title: "Replace Your Toothbrush Regularly",
-          icon: "/tips/icons/replace.png",
+          icon: "/tips/cleaning/replace.png",
           text: "Change your brush or brush head every three to four months, or sooner if the bristles splay. Worn bristles clean far less effectively.",
         },
       ],
@@ -154,7 +154,7 @@ export const SERVICES_CONTENT = [
     title: "Crowns and Bridges",
     blurb: "Rebuilding teeth that are too damaged for a simple filling.",
     intro:
-      "When a tooth is cracked, heavily worn or has lost too much structure, a crown covers and protects what remains. A bridge replaces a missing tooth by anchoring to its neighbours. Veneers address the front surface of visible teeth.",
+      "Crowns and bridges are restorative and cosmetic dental treatments used to strengthen teeth, replace missing teeth, and improve smile appearance. Every smile is different, which is why we customize treatment recommendations based on your oral health, goals, and comfort.",
     points: [
       "Assessment of whether the remaining tooth structure can support a restoration",
       "Preparation, impressions or a digital scan, and a temporary restoration",
@@ -163,6 +163,108 @@ export const SERVICES_CONTENT = [
     ],
     visit:
       "Plan on at least two appointments spaced a few weeks apart while the laboratory fabricates the restoration.",
+    tips: {
+      heading: "What Are Crowns and Bridges Made Of?",
+      lead: "Not every restoration is made from the same material. Each option trades off strength, appearance, and how much of the tooth needs to be removed — so the right choice depends on which tooth it is and what matters most to you.",
+      items: [
+        {
+          title: "Porcelain Fused to Metal",
+          icon: "/tips/crowns/pfm.png",
+          text: "A metal base with porcelain layered over it. Strong and long-lasting, which is why it has been the standard for back teeth for decades. The trade-off is that the metal can show as a dark line at the gumline over time, and the porcelain can chip. Often the most cost-effective option when appearance is not the top priority.",
+        },
+        {
+          title: "All-Ceramic (Full Porcelain)",
+          icon: "/tips/crowns/fullCeramic.png",
+          text: "Made entirely of ceramic, so it matches natural tooth colour and translucency more closely than any metal-based option. The best choice for front teeth where appearance matters most. Modern high-strength ceramics hold up well, though they can be more prone to fracture than metal in heavy grinding and typically cost more.",
+        },
+        {
+          title: "Zirconia",
+          icon: "/tips/crowns/zirconia.png",
+          text: "A very strong ceramic that resists fracture better than older all-porcelain materials. It is increasingly used for both front and back teeth. It is highly opaque, so it looks slightly less lifelike than layered porcelain, though newer formulations have narrowed that gap considerably.",
+        },
+        {
+          title: "Gold Alloys",
+          icon: "/tips/crowns/gold.png",
+          text: "Gold and other metal alloys are the most durable and gentlest on the opposing tooth, which is why they are still used. The obvious drawback is colour. Some patients do not mind it on a back molar where it is rarely seen; others do. Requires the least tooth removal of any option.",
+        },
+        {
+          title: "Metal-Free Bridge Frameworks",
+          icon: "/tips/crowns/bridge.png",
+          text: "Bridges can be built on the same material families — porcelain fused to metal, all-ceramic, or zirconia. The choice affects strength across the span, so longer bridges are more often recommended in stronger materials to reduce the risk of flexing or fracture.",
+        },
+        {
+          title: "Choosing Between Them",
+          icon: "/tips/crowns/comparison.png",
+          text: "The decision comes down to which tooth, how much bite force it takes, how visible it is, and your budget. There is no single best material — there is a best material for your situation. We will walk through the trade-offs with you before anything is prepared or ordered.",
+        },
+      ],
+    },
+    signs: {
+      heading: "Signs You May Need a Crown or Bridge",
+      lead: "Crowns and bridges are recommended when a tooth is too compromised for a simple filling, or when a tooth is missing entirely. These are the situations where the conversation usually starts.",
+      prompt: "You may benefit from a crown or bridge if you notice:",
+      items: [
+        {
+          label: "A cracked or fractured tooth",
+          why: "A crack lets bacteria into the tooth and weakens the structure. Fillings can hold small cracks, but once the crack extends into a cusp or below the gumline, the tooth needs something that wraps around it.",
+          what: "We assess how deep the crack goes and whether it reaches the nerve. If the tooth is still restorable, a crown covers the weakened area and holds it together under bite forces.",
+        },
+        {
+          label: "A heavily worn or broken-down tooth",
+          why: "Teeth worn from grinding, acid erosion, or repeated repair lose the structure that holds a filling in place. A large filling in a small amount of tooth tends to fail or fracture the tooth.",
+          what: "We remove the failing material, rebuild the core if needed, and fit a crown that replaces the missing surface and distributes the bite more evenly.",
+        },
+        {
+          label: "A tooth that has had root canal therapy",
+          why: "A root-canal-treated tooth no longer has the living tissue that kept it hydrated and flexible, so it is more brittle. Without a crown, it can fracture — often in a way that cannot be repaired.",
+          what: "We typically recommend a full-coverage crown after root canal treatment, especially on back teeth where bite forces are highest. This protects the tooth from splitting.",
+        },
+        {
+          label: "A missing tooth",
+          why: "When a tooth is lost, the teeth on either side can drift into the space and the opposing tooth can over-erupt. The bone in that area also shrinks over time, which complicates replacement later.",
+          what: "A bridge replaces the missing tooth by anchoring crowns to the healthy teeth beside it. We will also discuss implants and other options so you can choose what fits your situation.",
+        },
+        {
+          label: "A large existing filling with new decay",
+          why: "When a large filling develops decay underneath or at its edge, there is often not enough sound tooth left to simply refill it. Each replacement weakens the tooth further.",
+          what: "If more than half the tooth width is involved, a crown usually lasts longer than another filling. We will show you the radiograph and explain the reasoning before deciding.",
+        },
+        {
+          label: "A tooth that looks visibly dark or discoloured",
+          why: "A tooth can darken after trauma or root canal treatment because of changes inside the tooth. Whitening alone often will not correct this, since the colour is coming from within.",
+          what: "A crown can restore a natural, consistent appearance. We will talk about shade matching to the teeth around it so the result does not stand out.",
+        },
+      ],
+      note: "Restorability is assessed case by case. An exam and radiograph determine what is possible.",
+    },
+    faq: [
+      {
+        question: "What is the difference between a crown and a bridge?",
+        answer:
+          "A crown is a cap that covers a single damaged tooth to restore its shape, strength, and appearance. A bridge is a fixed structure that replaces one or more missing teeth by anchoring to the teeth on either side, called abutment teeth. A bridge usually involves crowns on those supporting teeth with an artificial tooth, or pontic, in between.",
+      },
+      {
+        question: "How long do crowns and bridges last?",
+        answer:
+          "With good care, a crown or bridge can last ten to fifteen years or more. Longevity depends on the health of the underlying tooth, your home hygiene, bite forces, and whether you grind your teeth. Regular check-ups catch small problems at the margins before they become failures.",
+      },
+      {
+        question: "Does getting a crown hurt?",
+        answer:
+          "The tooth is numbed during preparation, so the procedure itself should not be painful. The gum around the tooth may feel tender for a few days afterwards, and a temporary crown can shift slightly before your permanent one is fitted. If your bite feels off once the crown is placed, tell us — an adjustment usually resolves it quickly.",
+      },
+      {
+        question: "How long does the process take?",
+        answer:
+          "A traditional crown or bridge takes two appointments spaced a few weeks apart. The first visit prepares the tooth, takes impressions or a digital scan, and fits a temporary. The second visit fits and adjusts the final restoration. Same-day crowns exist for some cases, but the laboratory-fabricated approach is more common in a teaching clinic and generally offers better fit control.",
+      },
+      {
+        question: "Can I eat normally with a crown or bridge?",
+        answer:
+          "Yes, once the permanent restoration is cemented. We recommend avoiding very hard or sticky foods for the first day. With a bridge, be especially careful with sticky foods that can pull on the structure. Your bite will be checked at fitting so biting and chewing feel natural. If anything feels high or uneven, come back so we can adjust it rather than waiting.",
+      },
+    ],
+    faqHeading: "FAQ About Crowns and Bridges",
   },
   {
     slug: "root-canal-therapy",
