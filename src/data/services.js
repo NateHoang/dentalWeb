@@ -132,6 +132,108 @@ export const SERVICES_CONTENT = [
     ],
     visit:
       "X-rays are taken when there is a clinical reason for them, not by default. You are welcome to ask why any image is being recommended.",
+    tips: {
+      heading: "What Happens at an Exam",
+      lead: "A check-up is more than a look at your teeth. The exam moves through a set sequence, and each part answers a different question — whether anything is diseased, whether the bite is working, and whether there is anything the eye cannot reach.",
+      items: [
+        {
+          title: "Seeing What Is Visible",
+          icon: "/tips/xray/exam.png",
+          text: "The exam begins in the mouth, with a mirror and a fine probe. We check each tooth surface for decay, wear, cracks, and the state of existing fillings. The gums are probed gently to measure the pockets around each tooth. The tongue, cheeks, palate and throat are examined too — soft tissue changes are part of the picture.",
+        },
+        {
+          title: "The Bite and Jaw Joint",
+          icon: "/tips/xray/tmj.png",
+          text: "We check how the upper and lower teeth meet, whether any tooth is taking more load than it should, and how the jaw joint moves when you open and close. Clicking, tenderness, or limited opening are noted here. Bite problems explain a lot of otherwise mysterious wear, sensitivity and jaw discomfort.",
+        },
+        {
+          title: "Digital Radiographs",
+          icon: "/tips/xray/xray.png",
+          text: "X-rays show what the eye cannot: the bone supporting the teeth, the roots, the area under existing fillings, and the points where two teeth touch. Digital sensors mean lower doses than film, an image on screen within seconds, and the ability to magnify and adjust brightness. Images are kept on record and reviewed at future visits.",
+        },
+        {
+          title: "Types of X-ray",
+          icon: "/tips/xray/device.png",
+          text: "A periapical shows one or two teeth in full, root to crown. A bitewing shows the crowns and contacts of back teeth on one side and is the standard image for finding decay between teeth. A panoramic (OPG) shows the whole mouth in one view, including wisdom teeth and jaw. Which is needed depends on the question being asked.",
+        },
+        {
+          title: "Weighing the Benefit",
+          icon: "/tips/xray/benefit.png",
+          text: "Every radiograph is a small dose of radiation, and there is no reason to take one without a clinical question behind it. Recent images from another dentist can usually be requested rather than retaken. If you are pregnant or think you may be, say so — X-rays are still possible when needed, with extra precautions, but the decision is made with you.",
+        },
+        {
+          title: "Reviewing Together",
+          icon: "/tips/xray/review.png",
+          text: "The images appear on screen beside you, not turned away. We point out what we are looking at, what is normal, and what concerns us. You are encouraged to ask questions while the image is up. The visit ends with a written summary: what was found, and what the sensible next steps are.",
+        },
+      ],
+    },
+    signs: {
+      heading: "Signs It Is Time for a Check-up",
+      lead: "Some dental problems hurt early. Others — decay between teeth, gum disease, cracked roots — can develop for years without any discomfort at all. That is precisely why a check-up matters even when nothing feels wrong.",
+      prompt: "Book an exam if you notice:",
+      items: [
+        {
+          label: "Bleeding when you brush or floss",
+          why: "Gums that bleed are inflamed gums. The most common cause is plaque accumulating at the gumline. Early gum disease is painless and reversible, but left alone it progresses to bone loss that never grows back.",
+          what: "We measure the pockets and check for tartar below the gumline. For most people this is a clean and a change in home care, not more than that.",
+        },
+        {
+          label: "Sensitivity to hot, cold or sweet",
+          why: "A short, sharp sensation to cold often means a cavity or a cracked tooth. Mild sensitivity from exposed root surfaces is also common. Persistent or lingering sensitivity is more concerning — it suggests the nerve itself is inflamed.",
+          what: "We identify which surface or tooth is responsible and whether the cause is reversible. The distinction between reversible and irreversible decides the treatment.",
+        },
+        {
+          label: "A tooth that has changed colour",
+          why: "A single tooth turning grey or yellow, especially after a knock, can mean the nerve has died. This often follows an injury months or years earlier that was never examined. A dead nerve can sit quietly and then flare up.",
+          what: "A periapical radiograph will show whether there is infection at the root tip. If the nerve has died, root canal therapy or extraction may be needed.",
+        },
+        {
+          label: "Persistent bad breath or a bad taste",
+          why: "Persistent bad breath usually comes from the mouth itself — gum disease, decay, or a heavily coated tongue — rather than from the stomach. A constant bad taste can indicate a draining abscess, which is sometimes painless.",
+          what: "We examine for the source, since these are treatable. If nothing is found in the mouth, we may suggest you discuss it with your doctor.",
+        },
+        {
+          label: "A mouth ulcer that has not healed in two weeks",
+          why: "Most ulcers heal within a week or two. One that persists beyond that, particularly a painless one, needs to be looked at. This is a precaution, not a diagnosis — the overwhelming majority turn out to be harmless.",
+          what: "We examine it and decide whether it needs watching or a referral. Early review is the safe approach, and it is worth the appointment.",
+        },
+        {
+          label: "You have not been seen in a long time",
+          why: "Problems accumulate quietly. Gum disease and decay between teeth are both painless until they are advanced, which means an absence of symptoms is not evidence that nothing is wrong.",
+          what: "The first visit after a gap is a full assessment. Nothing will be done without discussing it with you first — the first goal is simply to know where you stand.",
+        },
+      ],
+      note: "No symptoms is not the same as no problems. That is the whole reason for a check-up.",
+    },
+    faq: [
+      {
+        question: "How often should I have a check-up?",
+        answer:
+          "It depends on your teeth, not on a fixed rule. Some people need six-monthly visits; those with a stable mouth and good home care may safely go longer; someone with active gum disease or a high decay rate may need to be seen more often. We recommend an interval and adjust it based on what actually happens between visits, rather than holding everyone to the same schedule.",
+      },
+      {
+        question: "Are dental X-rays safe?",
+        answer:
+          "Dental radiographs use very low doses of radiation — a set of bitewings is comparable to a few hours of ordinary background radiation, or a short flight. Digital sensors use considerably less than the old film systems. The risk is small enough to be considered negligible, but not zero, which is why we take images only when there is a clinical question they will answer.",
+      },
+      {
+        question: "Can I refuse an X-ray?",
+        answer:
+          "Yes. It is your mouth and your decision, and no image will be taken without your agreement. What we would say is that refusing means we are working with less information — decay between teeth cannot be seen from the surface, and neither can infection at a root tip. If you have concerns, we can discuss what the image would show and what the alternatives are, including watching and waiting, or requesting images from a previous dentist.",
+      },
+      {
+        question: "Do I need X-rays at every check-up?",
+        answer:
+          "No. The interval depends on your risk: someone with no decay and healthy gums may go several years between routine images, while someone with active problems may need them more often. Bitewings are the usual image for checking between the teeth. Panoramic images are not taken routinely — they are for specific questions such as wisdom teeth or jaw assessment.",
+      },
+      {
+        question: "What if I am pregnant?",
+        answer:
+          "Tell us at the appointment, and when booking if you can. Dental X-rays are still considered safe in pregnancy with the standard lead apron, and modern digital doses are very low. The usual approach is to avoid non-essential images, particularly in the first trimester, and to proceed with anything that is genuinely needed — an untreated infection is a greater risk than a radiograph. We will explain the trade-off and make the decision with you.",
+      },
+    ],
+    faqHeading: "FAQ About Exams and X-rays",
   },
   {
     slug: "dental-fillings",
