@@ -48,7 +48,6 @@ export const NAV_LINKS = [
       },
       { label: "Dental Fillings", to: "/services/dental-fillings" },
       { label: "Tooth Extractions", to: "/services/tooth-extractions" },
-      { label: "Root Canal Therapy", to: "/services/root-canal-therapy" },
       { label: "Exams and X-rays", to: "/services/exams-and-xrays" },
     ],
   },
@@ -64,9 +63,9 @@ export const FOOTER_LINKS = [
 ];
 
 export const LEGAL_LINKS = [
-  { label: "Privacy Policy", href: "#" },
-  { label: "Accessibility", href: "#" },
-  { label: "Website Terms", href: "#" },
+  { label: "Privacy Policy", href: "/privacy-policy" },
+  { label: "Accessibility", href: "/accessibility" },
+  { label: "Website Terms", href: "/terms" },
 ];
 
 export const HERO_ASSURANCES = [

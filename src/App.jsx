@@ -6,6 +6,9 @@ import AboutPage from "./pages/AboutPage";
 import Services from "./pages/Services";
 import ServiceDetail from "./pages/ServiceDetail";
 import useScrollToHash from "./lib/useScrollToHash";
+import PrivacyPolicy from "./pages/PrivacyPolicy.jsx";
+import Accessibility from "./pages/Accessibility.jsx";
+import Terms from "./pages/Terms.jsx";
 
 export default function App() {
   useScrollToHash();
@@ -21,6 +24,9 @@ export default function App() {
           <Route path="/services/:slug" element={<ServiceDetail />} />
           <Route path="/contact" element={<HomePage />} />
           <Route path="*" element={<HomePage />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/accessibility" element={<Accessibility />} />
+          <Route path="/terms" element={<Terms />} />
         </Routes>
       </main>
       <Footer />

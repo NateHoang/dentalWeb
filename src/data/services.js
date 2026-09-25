@@ -328,21 +328,6 @@ export const SERVICES_CONTENT = [
     faqHeading: "FAQ About Crowns and Bridges",
   },
   {
-    slug: "root-canal-therapy",
-    title: "Root Canal Therapy",
-    blurb: "Treating infection inside a tooth so the tooth itself can stay.",
-    intro:
-      "When decay or trauma reaches the nerve, the tissue inside the tooth becomes inflamed or infected. Root canal therapy removes that tissue, disinfects the canal and seals it, which relieves the pain and usually avoids extraction.",
-    points: [
-      "Diagnosis of the source of pain, often with radiographs",
-      "Cleaning and shaping of the canal system under local anaesthetic",
-      "Sealing of the canals and a restoration to close the tooth",
-      "Follow-up to confirm the tooth has settled",
-    ],
-    visit:
-      "Availability depends on the complexity of the case and clinic guidelines. Some teeth are referred to a specialist, and I will tell you directly if yours is one of them.",
-  },
-  {
     slug: "tooth-extractions",
     title: "Tooth Extractions",
     blurb:
