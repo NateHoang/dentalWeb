@@ -1,7 +1,7 @@
 import { SITE, FOOTER_LINKS, LEGAL_LINKS } from "../../data/site.js";
 import { IconFacebook, IconInstagram, IconLinkedIn } from "../icons/index.jsx";
 import Button from "../ui/Button.jsx";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 
 function SocialLinks() {
   return (
@@ -62,6 +62,7 @@ function LegalBar() {
 
 function ContactLink({ to, children, isButton = false }) {
   const navigate = useNavigate();
+  const location = useLocation();
 
   const handleContactClick = (e) => {
     e.preventDefault();
@@ -71,18 +72,24 @@ function ContactLink({ to, children, isButton = false }) {
     const targetPath = url.pathname;
     const targetHash = url.hash;
 
-    // If already on /contact, scroll to the anchor
-    if (window.location.pathname === targetPath) {
-      const id = targetHash.replace("#", "");
-      const el = document.getElementById(id);
-      if (el) {
-        window.history.replaceState(null, "", `${targetPath}${targetHash}`);
-        el.scrollIntoView({ behavior: "smooth", block: "start" });
+    // Already on the target page
+    if (location.pathname === targetPath) {
+      // If there's a hash, scroll to that anchor
+      if (targetHash) {
+        const id = targetHash.replace("#", "");
+        const el = document.getElementById(id);
+        if (el) {
+          window.history.replaceState(null, "", `${targetPath}${targetHash}`);
+          el.scrollIntoView({ behavior: "smooth", block: "start" });
+          return;
+        }
       }
+      // No hash (or anchor not found) — go to the top of the page
+      window.scrollTo({ top: 0, behavior: "smooth" });
       return;
     }
 
-    // Navigate to the page with the hash
+    // Different page — navigate there
     navigate(to);
   };
 
