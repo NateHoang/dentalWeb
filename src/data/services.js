@@ -139,7 +139,7 @@ export const SERVICES_CONTENT = [
     blurb:
       "Repairing a cavity to restore comfort and normal function to the tooth.",
     intro:
-      "A filling removes decayed tissue and rebuilds the tooth with a bonded material shaped to your bite. Treated early, the procedure is straightforward and the tooth keeps most of its original structure.",
+      "A filling removes decayed tissue and rebuilds the tooth with a bonded material shaped to your bite. Treated early, the procedure is straightforward and the tooth keeps most of its original structure. If left untreated, it may cause the patient discomfort, or require more extensive treatment later.",
     points: [
       "Removal of decay and preparation of the tooth",
       "Tooth-coloured composite material in most cases",
@@ -148,6 +148,67 @@ export const SERVICES_CONTENT = [
     ],
     visit:
       "Most single fillings are completed in one appointment. Numbness usually wears off within a few hours.",
+    signs: {
+      heading: "Signs You May Need a Filling",
+      lead: "Cavities do not always announce themselves. Many people feel nothing until decay has grown deep enough to reach the nerve. These are the signals worth paying attention to.",
+      prompt: "You may need a filling if you notice:",
+      items: [
+        {
+          label: "Sensitivity to sweet, hot, or cold",
+          why: "Decay softens the enamel and dentin that normally insulate the nerve inside the tooth. Once that protective layer is breached, temperature and sugar reach the nerve directly, which is why a sweet drink or cold water can cause a sudden twinge.",
+          what: "We locate the decay, remove it, and rebuild the tooth with a bonded filling. If the sensitivity is from a small cavity, this usually resolves the sensation right away.",
+        },
+        {
+          label: "A visible hole, pit, or dark spot",
+          why: "A cavity that has broken through the surface is visible as a shadow, dark spot, or actual hole. The tissue inside has already collapsed, and the area collects food and bacteria, so it tends to grow faster once it is open.",
+          what: "We examine the extent of the lesion with a radiograph to confirm the decay has not reached the nerve, then remove the decayed tissue and restore the tooth.",
+        },
+        {
+          label: "Pain when biting down",
+          why: "A cavity wide enough to weaken the tooth can flex slightly under bite pressure, which irritates the nerve. Sometimes pain on biting means the crack or decay has progressed further than expected.",
+          what: "We assess whether the tooth is still restorable with a filling, or whether it needs a crown. We will be honest if the damage is beyond what a filling can safely hold.",
+        },
+        {
+          label: "Food getting caught in one spot",
+          why: "A cavity between teeth creates a gap that traps food on every meal. That trapped debris feeds the bacteria already present, so the decay accelerates. This is one of the most common signs of a hidden cavity between teeth.",
+          what: "We take a bitewing radiograph to see the surfaces that are not visible by eye, then restore the tooth so nothing catches there again.",
+        },
+        {
+          label: "A rough or chipped edge",
+          why: "A tooth that has chipped or lost an edge exposes the softer dentin underneath and leaves a rough surface that plaque sticks to more easily. Even if it does not hurt now, it usually leads to a cavity if left alone.",
+          what: "We smooth the area and rebuild the missing edge with a bonded filling, restoring the shape so it cleans properly.",
+        },
+        {
+          label: "An old filling that looks discoloured or worn",
+          why: "Fillings do not last forever. Margins can wear or develop tiny gaps where bacteria seep underneath, causing new decay beneath a filling that looks fine on the surface.",
+          what: "We check every filling at your exam — visually and with radiographs. If a margin has failed, we remove the old material, clean the decay, and place a new filling.",
+        },
+      ],
+      note: "None of these confirm a cavity on their own. An examination does.",
+    },
+    faq: [
+      {
+        question: "How long do fillings last?",
+        answer:
+          "A well-placed filling can last five to fifteen years depending on the material, the size of the cavity, and where it is in your mouth. Composite fillings wear faster on back teeth, where chewing forces are high. Amalgam tends to last longer but is more visible. Regular check-ups let us catch a failing filling before the tooth is damaged further.",
+      },
+      {
+        question: "Does getting a filling hurt?",
+        answer:
+          "The tooth is numbed with local anaesthetic, so the procedure itself should not hurt. You may feel pressure and hear instruments working, which is normal. Sensitivity afterwards is common for a few days, especially with hot and cold. If severe pain lasts beyond a week, come back so we can check the bite or the health of the nerve.",
+      },
+      {
+        question: "How long does a filling appointment take?",
+        answer:
+          "A single small to medium filling typically takes thirty to sixty minutes. In a teaching clinic, plan on the longer end — each step is checked by supervising faculty, which also means more time for your questions. Multiple fillings may be spread across separate visits.",
+      },
+      {
+        question: "Can I eat after a filling?",
+        answer:
+          "Wait until the numbness wears off before eating, usually two to four hours. You can bite your cheek or tongue without feeling it until then. Once the anaesthetic has faded, you can eat normally. If your bite feels high or uneven on the new filling, come back so we can adjust it.",
+      },
+    ],
+    faqHeading: "FAQ About Dental Fillings",
   },
   {
     slug: "crowns-bridges",
@@ -296,52 +357,108 @@ export const SERVICES_CONTENT = [
     ],
     visit:
       "Straightforward extractions are done in the clinic. Surgical cases, including many wisdom teeth, are referred.",
-  },
-  {
-    slug: "dental-implants",
-    title: "Dental Implants",
-    blurb: "A fixed replacement for a missing tooth, planned in stages.",
-    intro:
-      "An implant is a post placed in the jawbone that supports a crown once healing is complete. It is the closest replacement to a natural tooth, and it depends heavily on having enough healthy bone to begin with.",
-    points: [
-      "Assessment of bone volume and gum health",
-      "Imaging and planning before anything is placed",
-      "A healing period between placement and the final crown",
-      "Maintenance guidance to protect the implant long term",
+    tips: {
+      heading: "The Two Kinds of Extraction",
+      lead: "Extractions are either simple or surgical, and the difference matters for how the appointment goes, who performs it, and what healing looks like afterwards. We decide which one you need before the day of the procedure, not during it.",
+      items: [
+        {
+          title: "Simple Extraction",
+          icon: "/tips/extraction/simple.png",
+          text: "A tooth that is visible above the gumline and can be loosened and lifted out in one piece with instruments called elevators and forceps. The tooth is loosened within its socket and removed with the surrounding bone left intact. Performed by a general dentist or student under supervision, usually in a single appointment.",
+        },
+        {
+          title: "Surgical Extraction",
+          icon: "/tips/extraction/surgical.png",
+          text: "Needed when the tooth has broken off at the gumline, is deeply decayed, or is fully or partly buried in bone — as many wisdom teeth are. A small incision is made in the gum, and bone may be removed to reach the tooth. The tooth is often sectioned into pieces to lift it out safely. Sometimes closed surgically with sutures.",
+        },
+        {
+          title: "Wisdom Teeth",
+          icon: "/tips/extraction/3rdMolars.png",
+          text: "Third molars are the most common teeth requiring surgical removal. They often emerge at an angle, crowd the adjacent molar, or remain completely trapped in the jaw. Impacted third molars are typically referred to an oral surgeon because of proximity to nerves and the complexity of the bone removal involved.",
+        },
+        {
+          title: "When Infection Is Present",
+          icon: "/tips/extraction/infection.png",
+          text: "If a tooth has an active abscess, we sometimes prescribe antibiotics for a few days before extracting, so the anaesthetic works properly and infection does not spread during the procedure. In severe cases with facial swelling, the tooth may be drained first and extracted later. These decisions are made case by case.",
+        },
+        {
+          title: "Alternatives We Consider First",
+          icon: "/tips/extraction/alt.png",
+          text: "An extraction is only recommended when the tooth genuinely cannot be saved. Root canal therapy can rescue a badly decayed or infected tooth. A crown can protect one cracked beyond what a filling will hold. Periodontal treatment can stabilise a tooth loosened by gum disease. These options are discussed honestly before removal is agreed.",
+        },
+        {
+          title: "What to Expect After",
+          icon: "/tips/extraction/after.png",
+          text: "The first 24 hours are the most important. A blood clot forms in the socket and needs to be left undisturbed — no rinsing, no smoking, no straws, no vigorous spitting. Some tenderness and swelling is normal for a few days. Written instructions are provided, and you are encouraged to call if anything worries you.",
+        },
+      ],
+    },
+    signs: {
+      heading: "Signs a Tooth May Need Removing",
+      lead: "Most teeth that end up extracted did not need to be. Catching these signals early usually means saving the tooth. When they appear late, extraction may become the only reasonable option.",
+      prompt: "An extraction may be needed if you notice:",
+      items: [
+        {
+          label: "Severe pain that wakes you at night",
+          why: "Pain that keeps you awake suggests the infection or inflammation has reached the nerve or the tissue around the root. A steady, throbbing ache is different from the occasional twinge of a cavity — it usually means the nerve is involved and the tooth has been deteriorating for some time.",
+          what: "We assess whether the tooth can still be saved with root canal therapy. If the root is fractured or the surrounding bone is destroyed, extraction may be the safer option.",
+        },
+        {
+          label: "A tooth that is loose",
+          why: "Adult teeth can loosen for two reasons: advanced gum disease destroying the bone that anchors them, or a fracture through the root. When enough bone is lost, no restoration can hold the tooth in place. A root fracture is similar — the two halves move independently and cannot repair.",
+          what: "We measure the bone support with a probe and radiograph. If the tooth is savable, we stabilise it. If the bone loss or fracture is too advanced, we discuss extraction and your options for the space.",
+        },
+        {
+          label: "A tooth that has broken off at the gumline",
+          why: "A tooth broken down to the gum is difficult to restore because there is no structure left to hold a crown or filling. If the break extends below the gumline, the tooth may be unrecoverable without surgery.",
+          what: "We examine how far the break extends. Some can still be saved with a post and crown. If the fracture is too deep, an extraction is considered, sometimes surgically.",
+        },
+        {
+          label: "Swelling in the face or jaw",
+          why: "Facial swelling from a dental infection is a serious sign — the infection has spread beyond the tooth into surrounding tissue. This can become an emergency if it threatens the airway or spreads to the deep spaces of the neck. Do not wait on this one.",
+          what: "This usually requires urgent care, not a routine appointment. If you have facial swelling with difficulty swallowing or breathing, seek emergency care immediately.",
+        },
+        {
+          label: "A cracking or repeated infection in one tooth",
+          why: "A tooth that has been root-treated, crowned, and still gets infected repeatedly may have a hairline root fracture that no treatment can seal. Root fractures are essentially unrepairable — bacteria travel down the crack from the mouth to the bone.",
+          what: "Repeated failures of the same tooth are a signal that the tooth itself has a physical problem we cannot fix. We discuss extraction candidly if so.",
+        },
+        {
+          label: "Wisdom teeth causing repeated problems",
+          why: "Impacted or partially erupted wisdom teeth are hard to clean and commonly cause gum infection, crowding, cyst formation, or damage to the molar next to them. A single isolated problem might be managed, but recurring ones are usually best resolved by removal.",
+          what: "We assess position and root development on a radiograph. Where removal is indicated, we refer to an oral surgeon for the procedure.",
+        },
+      ],
+      note: "Every extraction is a last resort. A second opinion is always reasonable.",
+    },
+    faq: [
+      {
+        question: "Does an extraction hurt?",
+        answer:
+          "The procedure itself is done under local anaesthetic, so it should not hurt — you will feel pressure, pushing, and sometimes the sensation of the tooth moving, but not pain. If you feel anything sharp, tell us immediately; we can always add more anaesthetic and there is no reason to sit through discomfort. Soreness afterwards for a few days is normal and manageable with pain relief.",
+      },
+      {
+        question: "How long does the appointment take?",
+        answer:
+          "A simple extraction usually takes 20 to 40 minutes including numbing and the time afterwards. A surgical extraction, or one involving a tooth that has broken, can take an hour or more. In a teaching clinic, plan on the longer end for the same procedure — each step is checked by supervising faculty.",
+      },
+      {
+        question: "How long is the healing process?",
+        answer:
+          "The gum usually closes over the socket within one to two weeks, and the bone underneath fills in over two to three months. Discomfort typically peaks in the first 24 to 48 hours and eases steadily after that. Swelling, if it appears, is usually worst on day two or three and then settles.",
+      },
+      {
+        question: "What is dry socket and how do I avoid it?",
+        answer:
+          "A dry socket happens when the protective blood clot in the socket is lost early, exposing the bone. It is painful, though not dangerous, and requires a return visit. To reduce risk: no smoking, no straws, no vigorous rinsing or spitting for the first 24 hours, and avoid hot drinks or hard foods on that side. If pain worsens around day three or four rather than improving, come back so we can check.",
+      },
+      {
+        question: "Should I replace the tooth afterwards?",
+        answer:
+          "Not always, but usually worth discussing. Removing a back tooth can cause the adjacent teeth to tip into the space and the opposing tooth to drift down out of the bite — which can create new problems years later. An implant, bridge, or partial denture are the main replacement options. Sometimes a missing wisdom tooth needs no replacement at all. We will talk through what is sensible for your case, not just what is possible.",
+      },
     ],
-    visit:
-      "Implant treatment spans several months and is strictly scope-dependent in a teaching clinic. Ask me early and I will be honest about what I can and cannot provide.",
-  },
-  {
-    slug: "invisible-alignment",
-    title: "Invisible Alignment",
-    blurb: "Gradual straightening using a series of clear removable trays.",
-    intro:
-      "Clear aligners move teeth in small increments using trays you change on a schedule. They suit mild to moderate crowding and spacing, and they depend almost entirely on how consistently they are worn.",
-    points: [
-      "Records and scans to assess whether aligners suit your case",
-      "A staged treatment plan you can see before starting",
-      "Regular reviews to confirm teeth are tracking as planned",
-      "Retainers afterwards, which are not optional",
-    ],
-    visit:
-      "Aligners require around twenty to twenty-two hours of wear a day. If that is unrealistic for you, it is better to know before starting.",
-  },
-  {
-    slug: "teeth-whitening",
-    title: "Teeth Whitening",
-    blurb:
-      "Lightening natural tooth colour safely, after checking it is suitable.",
-    intro:
-      "Whitening works on natural tooth structure and does nothing to crowns, veneers or fillings. Before starting, decay and gum problems need to be treated, otherwise the process is uncomfortable and the result uneven.",
-    points: [
-      "An exam first to confirm whitening is appropriate",
-      "Custom trays and professional-strength gel for home use",
-      "Realistic expectations set before you begin",
-      "Advice on managing sensitivity during treatment",
-    ],
-    visit:
-      "Results vary by the cause of discolouration. Staining from food and drink responds well; greying from within the tooth often does not.",
+    faqHeading: "FAQ About Tooth Extractions",
   },
 ];
 
